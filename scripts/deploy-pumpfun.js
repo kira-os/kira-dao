@@ -15,8 +15,13 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-  // Network
-  RPC_ENDPOINT: process.env.SOLANA_RPC || 'https://api.mainnet-beta.solana.com',
+  // Network - can be overridden by environment variable
+  NETWORK: process.env.SOLANA_NETWORK || 'devnet', // 'devnet', 'testnet', or 'mainnet-beta'
+  RPC_ENDPOINTS: {
+    'devnet': 'https://api.devnet.solana.com',
+    'testnet': 'https://api.testnet.solana.com',
+    'mainnet-beta': 'https://api.mainnet-beta.solana.com'
+  },
   // Token details
   TOKEN_NAME: 'Kira DAO',
   TOKEN_SYMBOL: 'KIRA',
@@ -34,10 +39,12 @@ const CONFIG = {
 
 class KiraDAOTokenDeployer {
   constructor() {
-    this.connection = new Connection(CONFIG.RPC_ENDPOINT, 'confirmed');
+    const rpcEndpoint = CONFIG.RPC_ENDPOINTS[CONFIG.NETWORK] || CONFIG.RPC_ENDPOINTS['devnet'];
+    this.connection = new Connection(rpcEndpoint, 'confirmed');
     this.keypair = null;
     this.tokenMint = null;
     this.tokenAccount = null;
+    this.network = CONFIG.NETWORK;
   }
 
   /**
@@ -80,7 +87,18 @@ class KiraDAOTokenDeployer {
     
     if (balanceSOL < 0.1) {
       console.warn('Warning: Wallet balance is low. Need at least 0.1 SOL for deployment.');
-      console.log('Please fund the wallet before proceeding.');
+      
+      if (this.network === 'devnet') {
+        console.log('\n=== DEVNET FUNDING INSTRUCTIONS ===');
+        console.log('To get devnet SOL for testing:');
+        console.log(`1. Visit: https://solfaucet.com`);
+        console.log(`2. Enter wallet address: ${this.keypair.publicKey.toString()}`);
+        console.log(`3. Select "Devnet" network`);
+        console.log(`4. Request SOL (request multiple times if needed)`);
+        console.log(`5. Run deployment script again`);
+      } else {
+        console.log('Please fund the wallet before proceeding.');
+      }
     }
     
     return balanceSOL;
