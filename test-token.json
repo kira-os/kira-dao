@@ -1,0 +1,14 @@
+{
+  "name": "KIRA Test Token",
+  "symbol": "tKIRA",
+  "mint": "C5uwzyibsfNcwKP1NAxMVfscaofMg6QhxAR43U2EMhvg",
+  "decimals": 9,
+  "totalSupply": 1000000,
+  "deployer": "B3uJB9Vmjv5xW1PLtoU8hm4riRR1gixqsFywE5TW7GwZ",
+  "deployerAccount": "3Axi9tzUVz3N3aLY5ATKXhJwsu7Lo12Mcb9HWpRSFBq8",
+  "treasuryAccount": "8qPkCkx7WzhV2UjTE4JiHVQixWknGxQqL7cRpF98t53A",
+  "multisigTreasury": "BE6to6DUcMr9K7ByboE4S4S8RHYiJy4Uu8WJzpsWgQMm",
+  "network": "devnet",
+  "timestamp": "2026-02-14T02:00:59.137Z",
+  "solscanUrl": "https://solscan.io/token/C5uwzyibsfNcwKP1NAxMVfscaofMg6QhxAR43U2EMhvg?cluster=devnet"
+}
