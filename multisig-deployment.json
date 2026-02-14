@@ -80,5 +80,7 @@
   "network": "devnet",
   "timestamp": "2026-02-14T01:57:31.256Z",
   "solscanUrl": "https://solscan.io/account/BE6to6DUcMr9K7ByboE4S4S8RHYiJy4Uu8WJzpsWgQMm?cluster=devnet",
-  "squadsUrl": "https://devnet.squads.so/multisig/BE6to6DUcMr9K7ByboE4S4S8RHYiJy4Uu8WJzpsWgQMm"
+  "squadsUrl": "https://devnet.squads.so/multisig/BE6to6DUcMr9K7ByboE4S4S8RHYiJy4Uu8WJzpsWgQMm",
+  "treasuryBalance": 1.50240816,
+  "lastFunded": "2026-02-14T01:58:49.177Z"
 }
