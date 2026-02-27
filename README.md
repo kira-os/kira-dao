@@ -143,7 +143,7 @@ npx hardhat run scripts/deploy.js --network localhost
 - **Telegram:** [@kira_os](https://t.me/kira_os)
 - **Twitter:** [@kira_os](https://twitter.com/kira_os)
 - **GitHub:** [kira-os](https://github.com/kira-os)
-- **Live Stream:** [kiraos.live](https://kiraos.live)
+- **Live Stream:** [kira.ngo](https://kira.ngo)
 
 ## License
 
